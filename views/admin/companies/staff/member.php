@@ -167,7 +167,22 @@
                                                 for="administrator"><?php echo _l('staff_add_edit_administrator'); ?></label>
                                         </div>
                                         <?php } ?>
-
+                                        
+                                        <?php if (is_admin()) { ?>
+                                            <div class="checkbox checkbox-primary">
+                                                <?php
+                                                     $is_primary = '';
+                                                     if (isset($member) && ($member->is_primary)) {
+                                                         $is_primary = 'checked';
+                                                     }
+                                                  ?>
+                                                <input type="checkbox" name="is_primary" id="is_primary"
+                                                    <?php echo $is_primary; ?>>
+                                                <label
+                                                    for="is_primary"><?php echo _l('staff_is_primary'); ?></label>
+                                            </div>
+                                        <?php } ?>
+                                        
                                         <?php 
                                             $checked = 'checked';
                                             $checked = '';
